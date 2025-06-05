@@ -34,20 +34,26 @@ class BottomNavItem extends StatelessWidget {
             Positioned(
               top: 8.h,
               right: 0.w,
-              child: SizedBox(
+              child: Container(
                 width: 16.w,
                 height: 13.h,
+                decoration: BoxDecoration(
+                  color: AppColor.dark,
+                ),
                 child: Container(
-                  padding: EdgeInsets.all(1.5.r),
+                  margin: EdgeInsets.all(1.5.r),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.r),
+                    color: AppColor.primary,
                   ),
-                  child: Text(
-                    itemNumber,
-                    style: proximaStyle(
-                      fontSize: 7,
-                      color: AppColor.dark,
-                      fontWeight: FontWeight.w700,
+                  child: Center(
+                    child: Text(
+                      itemNumber,
+                      style: proximaStyle(
+                        fontSize: 7,
+                        color: AppColor.dark,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ),

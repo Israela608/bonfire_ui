@@ -6,7 +6,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:stroll_demo/core/constants/strings.dart';
 import 'package:stroll_demo/core/utils/constants.dart';
 import 'package:stroll_demo/modules/screens/home_screen.dart';
-import 'package:stroll_demo/modules/screens/splash_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -43,30 +42,7 @@ class MyApp extends StatelessWidget {
           home: child!,
         );
       },
-      child: AuthWrapper(),
-    );
-  }
-}
-
-class AuthWrapper extends HookConsumerWidget {
-  AuthWrapper({super.key});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final isSplashComplete = useState(false);
-
-    useEffect(() {
-      // Show Splash for 3 seconds
-      Future.delayed(Duration(seconds: 3), () {
-        isSplashComplete.value = true;
-      });
-      return null;
-    }, []);
-
-    if (!isSplashComplete.value) return SplashScreen();
-
-    return const Scaffold(
-      body: HomeScreen(),
+      child: HomeScreen(),
     );
   }
 }
