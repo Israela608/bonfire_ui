@@ -12,163 +12,188 @@ class CardTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          59.height,
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                'Stroll Bonfire',
-                style: proximaStyle(
-                  fontSize: 34,
-                  color: AppColor.text4,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              Container(
-                height: 40.w,
-                width: 40.h,
-                child: getSvg(
-                  svg: 'arrow-down',
-                  height: 5.33,
-                  width: 10,
-                  fit: BoxFit.scaleDown,
-                ),
-              )
-            ],
+    return Stack(
+      children: [
+        Positioned(
+          top: -15.h,
+          child: getImage(
+            image: 'background',
+            height: 502,
+            width: 375,
           ),
-          2.height,
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              getSvg(
-                svg: 'clock',
-                height: 15,
-                width: 13,
-              ),
-              3.27.width,
-              Text(
-                '22h 00m',
-                style: proximaStyle(
-                  fontSize: 12,
-                  color: AppColor.white,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              9.73.width,
-              getSvg(
-                svg: 'user-small',
-                height: 13,
-                width: 10,
-              ),
-              3.27.width,
-              Text(
-                '103',
-                style: proximaStyle(
-                  fontSize: 12,
-                  color: AppColor.white,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
+        ),
+        Positioned(
+          top: 0,
+          left: -10.w,
+          right: -10.w,
+          bottom: 0,
+          child: getImage(
+            image: 'fade',
+            height: 812,
+            width: 375,
+            fit: BoxFit.cover,
           ),
-          316.height,
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 32.w),
-            child: Row(
-              children: [
-                getImage(
-                  image: 'photo',
-                  height: 50,
-                  width: 50,
-                ),
-                14.width,
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Angelina, 28',
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w700,
-                          color: AppColor.primaryText,
-                        ),
-                      ),
-                      12.height,
-                      Padding(
-                        padding: EdgeInsets.only(left: 5.w),
-                        child: Text(
-                          'What is your favorite time of the day?',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: AppColor.primaryText,
-                          ),
-                        ),
-                      ),
-                    ],
+        ),
+        SingleChildScrollView(
+          child: Column(
+            children: [
+              59.height,
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Stroll Bonfire',
+                    style: proximaStyle(
+                      fontSize: 34,
+                      color: AppColor.text4,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                )
-              ],
-            ),
-          ),
-          9.height,
-          Text(
-            '“Mine is definitely the peace in the morning.”',
-            style: proximaStyle(
-              fontSize: 12,
-              color: AppColor.text4,
-              fontWeight: FontWeight.w400,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-          14.height,
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Column(
-              children: [
-                CardOptions(),
-                11.height,
-                Row(
+                  SizedBox(
+                    height: 40.w,
+                    width: 40.h,
+                    child: getSvg(
+                      svg: 'arrow-down',
+                      height: 5.33,
+                      width: 10,
+                      fit: BoxFit.scaleDown,
+                    ),
+                  )
+                ],
+              ),
+              2.height,
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  getSvg(
+                    svg: 'clock',
+                    height: 15,
+                    width: 13,
+                  ),
+                  3.27.width,
+                  Text(
+                    '22h 00m',
+                    style: proximaStyle(
+                      fontSize: 12,
+                      color: AppColor.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  9.73.width,
+                  getSvg(
+                    svg: 'user-small',
+                    height: 13,
+                    width: 10,
+                  ),
+                  3.27.width,
+                  Text(
+                    '103',
+                    style: proximaStyle(
+                      fontSize: 12,
+                      color: AppColor.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+              316.height,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 32.w),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    getImage(
+                      image: 'photo',
+                      height: 50,
+                      width: 50,
+                    ),
+                    14.width,
                     Expanded(
-                      child: Text(
-                        'Pick your option.\nSee who has a similar mind.',
-                        style: proximaStyle(
-                          fontSize: 12,
-                          color: AppColor.secondaryText,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Angelina, 28',
+                            style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w700,
+                              color: AppColor.primaryText,
+                            ),
+                          ),
+                          12.height,
+                          Padding(
+                            padding: EdgeInsets.only(left: 5.w),
+                            child: Text(
+                              'What is your favorite time of the day?',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
+                                color: AppColor.primaryText,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        getSvg(
-                          svg: 'mic',
-                          height: 48,
-                          width: 48,
-                        ),
-                        6.width,
-                        getSvg(
-                          svg: 'forward',
-                          height: 48,
-                          width: 48,
-                        ),
-                      ],
-                    ),
-                    3.5.width,
+                    )
                   ],
                 ),
-              ],
-            ),
+              ),
+              9.height,
+              Text(
+                '“Mine is definitely the peace in the morning.”',
+                style: proximaStyle(
+                  fontSize: 12,
+                  color: AppColor.text4,
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              14.height,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Column(
+                  children: [
+                    CardOptions(),
+                    11.height,
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Pick your option.\nSee who has a similar mind.',
+                            style: proximaStyle(
+                              fontSize: 12,
+                              color: AppColor.secondaryText,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            getSvg(
+                              svg: 'mic',
+                              height: 48,
+                              width: 48,
+                            ),
+                            6.width,
+                            getSvg(
+                              svg: 'forward',
+                              height: 48,
+                              width: 48,
+                            ),
+                          ],
+                        ),
+                        3.5.width,
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              7.height,
+            ],
           ),
-          7.height,
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

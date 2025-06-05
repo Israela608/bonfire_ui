@@ -6,7 +6,9 @@ class BonfireTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Bonfire Page'),
+      child: Text(
+        'Bonfire Page',
+      ),
     );
   }
 }

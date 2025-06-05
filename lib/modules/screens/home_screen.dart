@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:stroll_demo/core/utils/app_colors.dart';
+import 'package:stroll_demo/core/utils/utils.dart';
 import 'package:stroll_demo/modules/components/bottom_nav_item.dart';
 import 'package:stroll_demo/modules/providers/nav_provider.dart';
 import 'package:stroll_demo/modules/tabs/bonfire_tab.dart';
@@ -23,50 +24,40 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     int selectedIndex = ref.watch(navProvider).index;
 
-    return Container(
-      decoration: BoxDecoration(
-        //color: AppColor.white,
-        gradient: AppColor.gradient,
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: IndexedStack(
+        index: selectedIndex,
+        children: pages,
       ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: IndexedStack(
-          index: selectedIndex,
-          children: pages,
-        ),
-        bottomNavigationBar: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 14.w),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              BottomNavItem(
-                iconName: 'card',
-                isActive: selectedIndex == 0,
-                onPress: () =>
-                    ref.read(navProvider.notifier).currentPosition = 0,
-              ),
-              BottomNavItem(
-                iconName: 'bonfire',
-                itemNumber: ' ',
-                isActive: selectedIndex == 1,
-                onPress: () =>
-                    ref.read(navProvider.notifier).currentPosition = 1,
-              ),
-              BottomNavItem(
-                iconName: 'chat',
-                itemNumber: '10',
-                isActive: selectedIndex == 2,
-                onPress: () =>
-                    ref.read(navProvider.notifier).currentPosition = 2,
-              ),
-              BottomNavItem(
-                iconName: 'user',
-                isActive: selectedIndex == 3,
-                onPress: () =>
-                    ref.read(navProvider.notifier).currentPosition = 3,
-              ),
-            ],
-          ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 14.w),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            BottomNavItem(
+              iconName: 'card',
+              isActive: selectedIndex == 0,
+              onPress: () => ref.read(navProvider.notifier).currentPosition = 0,
+            ),
+            BottomNavItem(
+              iconName: 'bonfire',
+              itemNumber: ' ',
+              isActive: selectedIndex == 1,
+              onPress: () => ref.read(navProvider.notifier).currentPosition = 1,
+            ),
+            BottomNavItem(
+              iconName: 'chat',
+              itemNumber: '10',
+              isActive: selectedIndex == 2,
+              onPress: () => ref.read(navProvider.notifier).currentPosition = 2,
+            ),
+            BottomNavItem(
+              iconName: 'user',
+              isActive: selectedIndex == 3,
+              onPress: () => ref.read(navProvider.notifier).currentPosition = 3,
+            ),
+          ],
         ),
       ),
     );
