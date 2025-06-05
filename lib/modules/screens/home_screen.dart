@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:stroll_demo/core/utils/app_colors.dart';
-import 'package:stroll_demo/core/utils/utils.dart';
 import 'package:stroll_demo/modules/components/bottom_nav_item.dart';
 import 'package:stroll_demo/modules/providers/nav_provider.dart';
 import 'package:stroll_demo/modules/tabs/bonfire_tab.dart';
