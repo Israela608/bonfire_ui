@@ -1,3 +1,5 @@
+import 'package:stroll_demo/core/constants/strings.dart';
+
 class CardItem {
   final String letter;
   final String text;
@@ -9,20 +11,20 @@ class CardItem {
 
   static List allCardItems = [
     CardItem(
-      letter: 'A',
-      text: 'The peace in the early mornings',
+      letter: Strings.letterA,
+      text: Strings.peaceMorning,
     ),
     CardItem(
-      letter: 'B',
-      text: 'The magical golden hours',
+      letter: Strings.letterB,
+      text: Strings.magicalHours,
     ),
     CardItem(
-      letter: 'C',
-      text: 'Wind-down time after dinners',
+      letter: Strings.letterC,
+      text: Strings.windDown,
     ),
     CardItem(
-      letter: 'D',
-      text: 'The serenity past midnight',
+      letter: Strings.letterD,
+      text: Strings.serenity,
     ),
   ];
 }

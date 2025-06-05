@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:stroll_demo/core/constants/strings.dart';
 import 'package:stroll_demo/core/utils/app_colors.dart';
 import 'package:stroll_demo/core/utils/app_styles.dart';
 import 'package:stroll_demo/core/utils/extensions.dart';
@@ -58,7 +59,7 @@ class CardTab extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Angelina, 28',
+                            Strings.angelina,
                             style: TextStyle(
                               fontSize: 11,
                               fontWeight: FontWeight.w700,
@@ -69,7 +70,7 @@ class CardTab extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.only(left: 5.w),
                             child: Text(
-                              'What is your favorite time of the day?',
+                              Strings.favouriteTime,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w700,
@@ -85,7 +86,7 @@ class CardTab extends StatelessWidget {
               ),
               9.height,
               Text(
-                '“Mine is definitely the peace in the morning.”',
+                Strings.mineIsDefinitely,
                 style: proximaStyle(
                   fontSize: 12,
                   color: AppColor.text4,
@@ -124,7 +125,7 @@ class HeaderWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Stroll Bonfire',
+              Strings.appName,
               style: proximaStyle(
                 fontSize: 34,
                 color: AppColor.text4,
@@ -154,7 +155,7 @@ class HeaderWidget extends StatelessWidget {
             ),
             3.27.width,
             Text(
-              '22h 00m',
+              Strings.time,
               style: proximaStyle(
                 fontSize: 12,
                 color: AppColor.white,
@@ -169,7 +170,7 @@ class HeaderWidget extends StatelessWidget {
             ),
             3.27.width,
             Text(
-              '103',
+              Strings.userNumber,
               style: proximaStyle(
                 fontSize: 12,
                 color: AppColor.white,
@@ -223,7 +224,7 @@ class FooterWidget extends StatelessWidget {
       children: [
         Expanded(
           child: Text(
-            'Pick your option.\nSee who has a similar mind.',
+            Strings.pickOption,
             style: proximaStyle(
               fontSize: 12,
               color: AppColor.secondaryText,
