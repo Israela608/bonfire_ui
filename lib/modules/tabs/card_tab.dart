@@ -6,6 +6,8 @@ import 'package:stroll_demo/core/utils/app_colors.dart';
 import 'package:stroll_demo/core/utils/app_styles.dart';
 import 'package:stroll_demo/core/utils/extensions.dart';
 import 'package:stroll_demo/core/utils/utils.dart';
+import 'package:stroll_demo/modules/components/card_option_item.dart';
+import 'package:stroll_demo/modules/models/card_item.dart';
 
 class CardTab extends StatelessWidget {
   const CardTab({super.key});
@@ -38,64 +40,7 @@ class CardTab extends StatelessWidget {
           child: Column(
             children: [
               59.height,
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'Stroll Bonfire',
-                    style: proximaStyle(
-                      fontSize: 34,
-                      color: AppColor.text4,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 40.w,
-                    width: 40.h,
-                    child: getSvg(
-                      svg: 'arrow-down',
-                      height: 5.33,
-                      width: 10,
-                      fit: BoxFit.scaleDown,
-                    ),
-                  )
-                ],
-              ),
-              2.height,
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  getSvg(
-                    svg: 'clock',
-                    height: 15,
-                    width: 13,
-                  ),
-                  3.27.width,
-                  Text(
-                    '22h 00m',
-                    style: proximaStyle(
-                      fontSize: 12,
-                      color: AppColor.white,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  9.73.width,
-                  getSvg(
-                    svg: 'user-small',
-                    height: 13,
-                    width: 10,
-                  ),
-                  3.27.width,
-                  Text(
-                    '103',
-                    style: proximaStyle(
-                      fontSize: 12,
-                      color: AppColor.white,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              ),
+              HeaderWidget(),
               316.height,
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 32.w),
@@ -155,43 +100,83 @@ class CardTab extends StatelessWidget {
                   children: [
                     CardOptions(),
                     11.height,
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Pick your option.\nSee who has a similar mind.',
-                            style: proximaStyle(
-                              fontSize: 12,
-                              color: AppColor.secondaryText,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            getSvg(
-                              svg: 'mic',
-                              height: 48,
-                              width: 48,
-                            ),
-                            6.width,
-                            getSvg(
-                              svg: 'forward',
-                              height: 48,
-                              width: 48,
-                            ),
-                          ],
-                        ),
-                        3.5.width,
-                      ],
-                    ),
+                    FooterWidget(),
                   ],
                 ),
               ),
               7.height,
             ],
           ),
+        ),
+      ],
+    );
+  }
+}
+
+class HeaderWidget extends StatelessWidget {
+  const HeaderWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'Stroll Bonfire',
+              style: proximaStyle(
+                fontSize: 34,
+                color: AppColor.text4,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            SizedBox(
+              height: 40.w,
+              width: 40.h,
+              child: getSvg(
+                svg: 'arrow-down',
+                height: 5.33,
+                width: 10,
+                fit: BoxFit.scaleDown,
+              ),
+            )
+          ],
+        ),
+        2.height,
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            getSvg(
+              svg: 'clock',
+              height: 15,
+              width: 13,
+            ),
+            3.27.width,
+            Text(
+              '22h 00m',
+              style: proximaStyle(
+                fontSize: 12,
+                color: AppColor.white,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            9.73.width,
+            getSvg(
+              svg: 'user-small',
+              height: 13,
+              width: 10,
+            ),
+            3.27.width,
+            Text(
+              '103',
+              style: proximaStyle(
+                fontSize: 12,
+                color: AppColor.white,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
         ),
       ],
     );
@@ -229,102 +214,41 @@ class CardOptions extends HookWidget {
   }
 }
 
-class CardItem {
-  final String letter;
-  final String text;
-
-  const CardItem({
-    required this.letter,
-    required this.text,
-  });
-
-  static List allCardItems = [
-    CardItem(
-      letter: 'A',
-      text: 'The peace in the early mornings',
-    ),
-    CardItem(
-      letter: 'B',
-      text: 'The magical golden hours',
-    ),
-    CardItem(
-      letter: 'C',
-      text: 'Wind-down time after dinners',
-    ),
-    CardItem(
-      letter: 'D',
-      text: 'The serenity past midnight',
-    ),
-  ];
-}
-
-class CardOptionsItem extends StatelessWidget {
-  const CardOptionsItem({
-    super.key,
-    required this.letter,
-    required this.text,
-    required this.isSelected,
-    required this.onPress,
-  });
-
-  final String letter;
-  final String text;
-  final bool isSelected;
-  final VoidCallback onPress;
+class FooterWidget extends StatelessWidget {
+  const FooterWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPress,
-      child: Container(
-        padding: EdgeInsets.only(
-          left: 10.w,
-          right: 9.w,
-          top: 13.5.h,
-          bottom: 13.5.h,
-        ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12.r),
-          color: AppColor.card,
-          border: isSelected
-              ? Border.all(
-                  width: 2.h,
-                  color: AppColor.primary,
-                )
-              : null,
-        ),
-        child: Row(
-          children: [
-            CircleAvatar(
-              radius: 10.r,
-              backgroundColor: isSelected ? AppColor.primary : AppColor.text2,
-              child: CircleAvatar(
-                radius: 9.r,
-                backgroundColor: isSelected ? AppColor.primary : AppColor.card,
-                child: Text(
-                  letter,
-                  style: proximaStyle(
-                    fontSize: 12,
-                    color: isSelected ? AppColor.primaryText : AppColor.text4,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
+    return Row(
+      children: [
+        Expanded(
+          child: Text(
+            'Pick your option.\nSee who has a similar mind.',
+            style: proximaStyle(
+              fontSize: 12,
+              color: AppColor.secondaryText,
+              fontWeight: FontWeight.w400,
             ),
-            9.width,
-            Expanded(
-              child: Text(
-                text,
-                style: proximaStyle(
-                  fontSize: 14,
-                  color: AppColor.text4,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
+          ),
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            getSvg(
+              svg: 'mic',
+              height: 48,
+              width: 48,
+            ),
+            6.width,
+            getSvg(
+              svg: 'forward',
+              height: 48,
+              width: 48,
             ),
           ],
         ),
-      ),
+        3.5.width,
+      ],
     );
   }
 }
