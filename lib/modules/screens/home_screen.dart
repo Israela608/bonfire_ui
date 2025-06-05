@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:stroll_demo/core/utils/app_colors.dart';
-import 'package:stroll_demo/core/utils/app_styles.dart';
-import 'package:stroll_demo/core/utils/utils.dart';
+import 'package:stroll_demo/modules/components/bottom_nav_item.dart';
 import 'package:stroll_demo/modules/providers/nav_provider.dart';
 import 'package:stroll_demo/modules/tabs/bonfire_tab.dart';
 import 'package:stroll_demo/modules/tabs/card_tab.dart';
@@ -31,88 +29,34 @@ class HomeScreen extends ConsumerWidget {
           index: selectedIndex,
           children: pages,
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: AppColor.dark,
-          currentIndex: selectedIndex,
-          onTap: (index) =>
-              ref.read(navProvider.notifier).currentPosition = index,
-          items: [
+        bottomNavigationBar: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
             BottomNavItem(
-              iconName: ImageIcon(AssetImage(getImagePath('home'))),
-              activeIcon: ImageIcon(AssetImage(getImagePath('home-bold'))),
-              label: 'Home',
+              iconName: 'card',
+              isActive: selectedIndex == 0,
+              onPress: () => ref.read(navProvider.notifier).currentPosition = 0,
             ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage(getImagePath('consultation'))),
-              activeIcon:
-                  ImageIcon(AssetImage(getImagePath('consultation-bold'))),
-              label: 'Consultation',
+            BottomNavItem(
+              iconName: 'bonfire',
+              itemNumber: ' ',
+              isActive: selectedIndex == 1,
+              onPress: () => ref.read(navProvider.notifier).currentPosition = 1,
             ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage(getImagePath('medication'))),
-              activeIcon:
-                  ImageIcon(AssetImage(getImagePath('medication-bold'))),
-              label: 'Medications',
+            BottomNavItem(
+              iconName: 'chat',
+              itemNumber: '10',
+              isActive: selectedIndex == 2,
+              onPress: () => ref.read(navProvider.notifier).currentPosition = 2,
             ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage(getImagePath('account'))),
-              activeIcon: ImageIcon(AssetImage(getImagePath('account-bold'))),
-              label: 'Account',
+            BottomNavItem(
+              iconName: 'user',
+              isActive: selectedIndex == 3,
+              onPress: () => ref.read(navProvider.notifier).currentPosition = 3,
             ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class BottomNavItem extends StatelessWidget {
-  const BottomNavItem({
-    super.key,
-    required this.iconName,
-    this.itemNumber = 0,
-    required this.isActive,
-  });
-
-  final String iconName;
-  final int itemNumber;
-  final bool isActive;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        getSvg(
-          svg: iconName,
-          height: 44,
-          width: 44,
-          color: isActive ? AppColor.white : null,
-        ),
-        if (itemNumber > 0)
-          Positioned(
-            top: 8.h,
-            right: 0.w,
-            child: SizedBox(
-              width: 16.w,
-              height: 13.h,
-              child: Container(
-                padding: EdgeInsets.all(1.5.r),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.r),
-                ),
-                child: Text(
-                  itemNumber.toString(),
-                  style: proximaStyle(
-                    fontSize: 7,
-                    color: AppColor.dark,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
-            ),
-          ),
-      ],
     );
   }
 }
