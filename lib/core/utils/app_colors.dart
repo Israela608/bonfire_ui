@@ -9,6 +9,7 @@ class AppColor {
   static const Color black = Color(0xFF000000);
 
   static const Color dark = Color(0xFF0F1115);
+  static const Color card = Color(0xFF232A2E);
 
   // Text
   static const Color primaryText = Color(0xFFF5F5F5);

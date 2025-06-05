@@ -24,7 +24,10 @@ class HomeScreen extends ConsumerWidget {
     int selectedIndex = ref.watch(navProvider).index;
 
     return Container(
-      decoration: BoxDecoration(gradient: AppColor.gradient),
+      decoration: BoxDecoration(
+        //color: AppColor.white,
+        gradient: AppColor.gradient,
+      ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: IndexedStack(
