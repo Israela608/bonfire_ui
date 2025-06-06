@@ -5,7 +5,6 @@ A Flutter application designed to provide users with the latest finance news. Th
 ## Screenshots
 
 ### Home Screen
-![Screenshot_20250509_020027](https://github.com/user-attachments/assets/281707e3-3924-47bd-8400-153b0a20802e)
 
 ## Setup Instructions
 
