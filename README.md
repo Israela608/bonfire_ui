@@ -1,10 +1,5 @@
 # Stroll Bonfire
-
-A Flutter application designed to provide users with the latest finance news. The app includes features such as user authentication, notifications, and a custom news web view.
-
-## Screenshots
-
-### Home Screen
+Demo UI App
 
 ## Setup Instructions
 
