@@ -1,16 +1,78 @@
-# stroll_demo
+# Stroll Bonfire
 
-A new Flutter project.
+A Flutter application designed to provide users with the latest finance news. The app includes features such as user authentication, notifications, and a custom news web view.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+### Home Screen
+![Screenshot_20250509_020027](https://github.com/user-attachments/assets/281707e3-3924-47bd-8400-153b0a20802e)
 
-A few resources to get you started if this is your first Flutter project:
+## Setup Instructions
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Prerequisites
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. **Flutter SDK**: Ensure you have Flutter installed on your machine. If not, follow the [installation guide](https://flutter.dev/docs/get-started/install).
+2. **Android Studio/VS Code**: Install an IDE of your choice (Android Studio or Visual Studio Code) for Flutter development.
+3. **Xcode (for iOS)**: If you are developing for iOS, make sure you have Xcode installed.
+
+### Steps to Run
+
+**Clone the repository:**
+```bash
+git clone https://github.com/Israela608/bonfire_ui.git
+```
+
+```bash
+cd bonfire_ui
+```
+
+**Install dependencies:**
+```bash
+flutter pub get
+```
+
+**Configure the app icons:**
+Add your app_logo.png image to the assets folder.
+
+Update the flutter_launcher_icons configuration in pubspec.yaml.
+
+Run the following command to generate icons:
+
+```bash
+flutter pub run flutter_launcher_icons:main
+```
+Run the app:
+
+```bash
+flutter run
+```
+For iOS, ensure that you have Xcode installed and use:
+```bash
+flutter run --ios
+```
+
+For Android, make sure you have an Android emulator or physical device connected, then use:
+```bash
+flutter run --android
+
+```
+
+
+## Code Structure
+```
+lib/core/: Utility functions, including app styles, colors and helpers.
+
+lib/modules/: Contains the main screens and View architecture.
+```
+
+
+## Dependencies
+**flutter_screenutil:** For responsive design.
+
+**hooks_riverpod:** For state management.
+
+**flutter_svg:** To display svgs.
+
+**flutter_staggered_grid_view:** Display components in grid format.
+
+
