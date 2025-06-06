@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stroll_demo/core/utils/app_colors.dart';
@@ -35,9 +34,9 @@ class CardOptionsItem extends StatelessWidget {
           color: AppColor.card,
           border: isSelected
               ? Border.all(
-            width: 2.h,
-            color: AppColor.primary,
-          )
+                  width: 2.h,
+                  color: AppColor.primary,
+                )
               : null,
         ),
         child: Row(
@@ -62,6 +61,7 @@ class CardOptionsItem extends StatelessWidget {
             Expanded(
               child: Text(
                 text,
+                textScaler: TextScaler.noScaling,
                 style: proximaStyle(
                   fontSize: 14,
                   color: AppColor.text4,

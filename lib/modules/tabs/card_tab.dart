@@ -37,77 +37,75 @@ class CardTab extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        SingleChildScrollView(
-          child: Column(
-            children: [
-              59.height,
-              HeaderWidget(),
-              316.height,
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 32.w),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    getImage(
-                      image: 'photo',
-                      height: 50,
-                      width: 50,
-                    ),
-                    14.width,
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            Strings.angelina,
+        Column(
+          children: [
+            59.height,
+            HeaderWidget(),
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32.w),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  getImage(
+                    image: 'photo',
+                    height: 50,
+                    width: 50,
+                  ),
+                  14.width,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          Strings.angelina,
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w700,
+                            color: AppColor.primaryText,
+                          ),
+                        ),
+                        12.height,
+                        Padding(
+                          padding: EdgeInsets.only(left: 5.w),
+                          child: Text(
+                            Strings.favouriteTime,
                             style: TextStyle(
-                              fontSize: 11,
+                              fontSize: 20,
                               fontWeight: FontWeight.w700,
                               color: AppColor.primaryText,
                             ),
                           ),
-                          12.height,
-                          Padding(
-                            padding: EdgeInsets.only(left: 5.w),
-                            child: Text(
-                              Strings.favouriteTime,
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                                color: AppColor.primaryText,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
               ),
-              9.height,
-              Text(
-                Strings.mineIsDefinitely,
-                style: proximaStyle(
-                  fontSize: 12,
-                  color: AppColor.text4,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic,
-                ),
+            ),
+            9.height,
+            Text(
+              Strings.mineIsDefinitely,
+              style: proximaStyle(
+                fontSize: 12,
+                color: AppColor.text4,
+                fontWeight: FontWeight.w400,
+                fontStyle: FontStyle.italic,
               ),
-              14.height,
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Column(
-                  children: [
-                    CardOptions(),
-                    11.height,
-                    FooterWidget(),
-                  ],
-                ),
+            ),
+            14.height,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: Column(
+                children: [
+                  CardOptions(),
+                  11.height,
+                  FooterWidget(),
+                ],
               ),
-              7.height,
-            ],
-          ),
+            ),
+            7.height,
+          ],
         ),
       ],
     );
