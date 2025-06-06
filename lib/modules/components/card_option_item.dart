@@ -23,6 +23,7 @@ class CardOptionsItem extends StatelessWidget {
     return GestureDetector(
       onTap: onPress,
       child: Container(
+        height: 65.h,
         padding: EdgeInsets.only(
           left: 10.w,
           right: 9.w,
@@ -66,6 +67,7 @@ class CardOptionsItem extends StatelessWidget {
                   fontSize: 14,
                   color: AppColor.text4,
                   fontWeight: FontWeight.w400,
+                  height: 0,
                 ),
               ),
             ),
